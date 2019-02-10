@@ -10,12 +10,8 @@ class App extends Component {
       {id: 2, name: 'Manu', age: 29},
       {id: 3, name: 'Stephanie', age: 26}
     ],
+    otherState: 'some other value',
     showPersons: false
-  }
-
-  togglePersonsHandler = () => {
-    const deosShow = this.state.showPersons;
-    this.setState({showPersons: !deosShow})
   }
 
   nameChangedHandler = (event, id) => {
@@ -28,6 +24,7 @@ class App extends Component {
     };
 
     // const person = Object.assign({}, this.state.persons[personIndex]);
+    
     person.name = event.target.value;
 
     const persons = [...this.state.persons];
@@ -41,6 +38,11 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons: persons})
+  }
+
+  togglePersonsHandler = () => {
+    const deosShow = this.state.showPersons;
+    this.setState({showPersons: !deosShow})
   }
 
   render() {
